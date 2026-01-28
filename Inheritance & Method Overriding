@@ -1,4 +1,3 @@
-
 class Employee {
     public double calculateSalary() {
         return 0;
@@ -6,39 +5,22 @@ class Employee {
 }
 
 class FullTimeEmployee extends Employee {
-    private double monthlySalary;
-
-    public FullTimeEmployee(double monthlySalary) {
-        this.monthlySalary = monthlySalary;
-    }
-
-    @Override
     public double calculateSalary() {
-        return monthlySalary;
+        return 50000;
     }
 }
 
 class PartTimeEmployee extends Employee {
-    private int hours;
-    private double ratePerHour;
-
-    public PartTimeEmployee(int hours, double ratePerHour) {
-        this.hours = hours;
-        this.ratePerHour = ratePerHour;
-    }
-
-    @Override
     public double calculateSalary() {
-        return hours * ratePerHour;
+        return 20000;
     }
 }
 
 public class TestEmployee {
     public static void main(String[] args) {
-        Employee e1 = new FullTimeEmployee(50000);   // Polymorphism
-        Employee e2 = new PartTimeEmployee(80, 300);
-
-        System.out.println("Full Time Salary: " + e1.calculateSalary());
-        System.out.println("Part Time Salary: " + e2.calculateSalary());
+        Employee e1 = new FullTimeEmployee();
+        Employee e2 = new PartTimeEmployee();
+        System.out.println(e1.calculateSalary());
+        System.out.println(e2.calculateSalary());
     }
 }
